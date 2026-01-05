@@ -1,0 +1,54 @@
+# Power BI Dashboard Implementation Guide
+
+## 1. Core DAX Measures
+
+To ensure accurate reporting, the following DAX measures were implemented:
+
+Total Customers: `Total Customers = DISTINCTCOUNT(Customer_Churn_Master[CustomerID])`
+Total Revenue: `Total Revenue = SUM(Customer_Churn_Master[Monetary])`
+Average Recency: `Avg Recency = AVERAGE(Customer_Churn_Master[Recency])`
+Churn Rate %:
+
+
+
+---
+
+## 2. Visualizations & Setup
+
+### A. Executive KPI Header
+
+Visual Type**: Multi-row card or individual Card visuals.
+Purpose : Provides an immediate "pulse check" of the business scale and the severity of customer attrition.
+
+### B. RFM Segment Distribution (TreeMap)
+
+Group: `Segment` (calculated based on R, F, and M scores).
+Values : `Total Customers`.
+Design Strategy : Applied a diverging color scale—Deep Green for "Champions" and Warning Red for "At Risk" segments.
+Insight : Simplifies complex behavioral data into high-level business categories.
+
+### C. Churn Behavior Analysis (Scatter Plot)
+
+X-Axis : `Recency`.
+-Axis : `Frequency`.
+Legend : `Is_Churned`.
+Insight : Visualizes the "Danger Zone"—the specific point in time (e.g., 60-90 days) where purchase frequency drops and churn probability spikes.
+
+### D. Geographic Revenue & Churn Map
+
+Location: `Country`.
+Bubble Size: `Total Revenue`.
+Color Saturation : `Churn Rate %`.
+Insight : Identifies if churn is  localized to specific regions, allowing for targeted geographic marketing interventions.
+
+---
+
+## 3. Business Logic & Recommendations
+
+The dashboard is designed to support the following strategic actions:
+
+Proactive Retention : Customers entering the "At Risk" segment (high recency) should trigger automated re-engagement workflows.
+Value Protection : High-monetary customers show lower churn rates; loyalty programs should focus on maintaining this "Champion" core.
+Win-back Strategy : Using the "Hibernating" segment to identify past high-value shoppers for specialized win-back offers.
+
+---

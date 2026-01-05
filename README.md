@@ -66,8 +66,8 @@ This project analyzes transactional data from a UK-based online retailer to iden
 
 ### 📂 Folder Structure
 
-* `data/`: Contains the cleaned CSV files.
-* `notebooks/`: Jupyter Notebook with Python cleaning and statistical tests.
-* `sql/`: SQL scripts used for RFM aggregation.
-* `dashboard/`: Power BI `.pbix` file.
+* `Data/`: Contains the cleaned CSV files.
+* `Notebooks/`: Jupyter Notebook with Python cleaning and statistical tests.
+* `Sql/`: SQL scripts used for RFM aggregation.
+* `Dashboard/`: Power BI `.pbix` file.
 * `README.md`: Project documentation.
